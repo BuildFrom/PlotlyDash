@@ -19,7 +19,7 @@ def Layout(children=None):
                                         html.A(
                                             "Home",
                                             href="/",
-                                            className="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium"
+                                            className="bg-secondary text-primary rounded-md px-3 py-2 text-sm font-medium"
                                         )
                                     ], className="ml-10 flex items-baseline space-x-4")
 
@@ -37,20 +37,20 @@ def Layout(children=None):
                             className="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium"
                         )
                     ], className="space-y-1 px-2 py-3 sm:px-3")
-                ], className="border-b border-gray-700 md:hidden"),
-            ], className="bg-gray-800"),
+                ], className="border-b border md:hidden"),
+            ], className="bg-primary"),
             html.Header([
                 html.Div([
                     html.H1([
                         "Plotly Dash"
-                    ], className="text-3xl font-bold tracking-tight text-white")
+                    ], className="text-3xl font-bold tracking-tight text-secondary")
                 ], className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8")
             ], className="py-10")
-        ], className="bg-gray-800 pb-32"),
+        ], className="bg-primary pb-32"),
         html.Main([
             html.Div(
                 children=children,
-                className="bg-orange-50 rounded-xl mx-auto max-w-7xl pb-12 p-2")
+                className="bg-accent rounded-xl mx-auto max-w-7xl pb-12 p-2")
         ], className="-mt-32 m-3.5")
     ], className="min-h-full")
 

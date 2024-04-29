@@ -25,6 +25,7 @@ https:
 i:
 	pip install pip-tools
 	pip-compile --strip-extras requirements.piptools
+	npm install
 
 req: # OR
 	pip3 install -r requirements.txt

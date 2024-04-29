@@ -1,0 +1,10 @@
+{
+    "scripts": {
+        "tailwind-watch": "npx tailwindcss -i tailwind.pcss -o ./app/assets/css/output.css --watch",
+        "tailwind-build": "npx tailwindcss -i tailwind.pcss -o ./app/assets/css/output.css --minify"
+    },
+    "devDependencies": {
+        "@tailwindcss/typography": "^0.5.13",
+        "tailwindcss": "^3.4.3"
+    }
+}
