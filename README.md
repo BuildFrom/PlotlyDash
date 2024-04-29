@@ -14,6 +14,14 @@ make runj
 ```
 3. Load up in browser: http://localhost:9000
 
+## TailwindCSS
+
+I've added it via npm because most people recommended cli over cdn and that v4 is going to be fast and efficient enough to handle it, so bear with it.
+* Added an ability to customize ui with `https://www.shadcn-svelte.com/themes`.
+* Copy your preferred design and paste it to `tailwind.pcss` to make changes.
+
+Why I did that? Apparently `https://plotly.com/dash/design-kit/` is going to cost you over 50 grands per year, yes, that's right! so here take it for free.
+
 ---
 
 PRs from Data Scientists and Frontend Developers are welcomed for better UI and cleaner Jupyter Lab/Notebooks experience 
