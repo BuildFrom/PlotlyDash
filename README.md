@@ -13,3 +13,7 @@ make rund
 make runj
 ```
 3. Load up in browser: http://localhost:9000
+
+---
+
+PRs from Data Scientists and Frontend Developers are welcomed for better UI and cleaner Jupyter Lab/Notebooks experience 
