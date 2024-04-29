@@ -1,0 +1,6 @@
+dash==2.0.0
+fastapi
+pandas
+uvicorn
+black
+jupyterlab
