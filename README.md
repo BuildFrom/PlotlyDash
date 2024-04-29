@@ -20,7 +20,7 @@ I've added it via npm because most people recommended cli over cdn and that v4 i
 * Added an ability to customize ui with `https://www.shadcn-svelte.com/themes`.
 * Copy your preferred design and paste it to `tailwind.pcss` to make changes.
 
-Why I did that? Apparently `https://plotly.com/dash/design-kit/` is going to cost you over 50 grands per year, yes, that's right! so here take it for free.
+Why did I do it? Apparently `https://plotly.com/dash/design-kit/` is going to cost you over 50 grands per year, yes, that's right! so here take it for free.
 
 ---
 
