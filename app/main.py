@@ -2,12 +2,14 @@ import dash
 from fastapi import FastAPI, HTTPException
 from fastapi.responses import JSONResponse
 from fastapi.middleware.wsgi import WSGIMiddleware
+from app.blueprint import router
 from app.lib import Layout, Footer
 from dotenv import load_dotenv
 from fastapi.middleware.cors import CORSMiddleware
 
 
 load_dotenv()
+
 # ==============================
 
 
@@ -21,6 +23,8 @@ def create_app():
         allow_methods=["*"],
         allow_headers=["*"],
     )
+
+    router(app)
 
     @app.exception_handler(HTTPException)
     async def http_exception_handler(request, exc):
@@ -37,6 +41,7 @@ def create_app():
         )
 
     app.mount("/", WSGIMiddleware(create_dash().server))
+    
     return app
 
 
@@ -48,7 +53,6 @@ def create_dash() -> dash.Dash:
         __name__,
         title="Dash App",
         assets_folder="lib/assets",
-        pages_folder="routes",
         use_pages=True,
         external_stylesheets=[
             {

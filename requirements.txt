@@ -5,3 +5,6 @@ uvicorn
 black
 jupyterlab
 python-dotenv
+colorama
+passlib
+jose

@@ -1,6 +1,15 @@
+from uuid import uuid4
+from fastapi.responses import JSONResponse
 import numpy as np
 import pandas as pd
 import os
+# app.lib.constants needed ONLY here to avoid circular imports
+from app.lib.constants import BCRYPT_CONTEXT 
+
+
+# =============
+# DATA SCIENCE
+# =============
 
 def jitter(df, col, amt=0.5):
     return df[col] + np.random.random(len(df)) * amt - amt / 2
@@ -45,3 +54,22 @@ def modify(fig):
         xaxis=dict(gridcolor=gl),
         yaxis=dict(gridcolor=gl),
     )
+
+# =============
+# WEB API
+# =============
+
+def get_uuid():
+    return str(uuid4())[:8]
+
+def get_hashed_password(password):
+    return BCRYPT_CONTEXT.hash(password)
+
+def verify_password(password, hashed_password):
+    return BCRYPT_CONTEXT.verify(password, hashed_password)
+
+def response(content, status_code):
+    return JSONResponse(content=content, status_code=status_code)
+
+def error(status_code, detail):
+    return response({"error": detail}, status_code)
