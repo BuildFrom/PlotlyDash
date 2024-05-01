@@ -2,7 +2,6 @@ import numpy as np
 import pandas as pd
 import os
 
-
 def jitter(df, col, amt=0.5):
     return df[col] + np.random.random(len(df)) * amt - amt / 2
 
@@ -22,8 +21,8 @@ def limit_n(df, col, n=20, other="Other"):
 def csv(filename):
     current_dir = os.path.dirname(os.path.abspath(__file__))
     file = os.path.join(current_dir, "data", f"{filename}.csv")
+    # print("Path to data: ",file)
     return pd.read_csv(file)
-
 
 def modify(fig):
     # Sadly, atm, here you'd have to manually copy/paste after you figure out

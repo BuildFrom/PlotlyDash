@@ -15,6 +15,8 @@ path:
 	source env/bin/activate
 
 https:
+	pip install --upgrade pip
+
 	pip3 install certifi
 	"/Applications/Python ${PYTHON_VERSION}/Install Certificates.command"
 
@@ -23,6 +25,7 @@ https:
 # =================================
 	
 i:
+	pip install --upgrade pip setuptools
 	pip install pip-tools
 	pip-compile --strip-extras requirements.piptools
 	npm install

@@ -2,8 +2,9 @@ import pandas as pd
 import numpy as np
 import plotly.express as px
 from dash import dcc
+from app.lib import modify, csv
+
 pd.options.plotting.backend = 'plotly'
-from app.notebooks.helpers import modify, csv
 
 def tweak_alta():
     df = csv('snow-alta-1990-2017')

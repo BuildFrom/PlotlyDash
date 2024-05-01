@@ -4,3 +4,4 @@ pandas
 uvicorn
 black
 jupyterlab
+python-dotenv

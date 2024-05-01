@@ -27,20 +27,32 @@ def Layout(children=None):
                                                             ),
                                                             html.Div(
                                                                 [
-                                                                    html.Div(
+                                                                    html.Nav(
                                                                         [
                                                                             dcc.Link(
                                                                                 html.A(
                                                                                     "Home",
-                                                                                    id="home-link",
                                                                                     className="bg-secondary text-primary rounded-md px-3 py-2 text-sm font-medium",
                                                                                 ),
                                                                                 href="/",
                                                                             ),
+                                                                            dcc.Link(
+                                                                                html.A(
+                                                                                    "Analytics",
+                                                                                    className="bg-secondary text-primary rounded-md px-3 py-2 text-sm font-medium",
+                                                                                ),
+                                                                                href="/analytics",
+                                                                            ),
+                                                                            dcc.Link(
+                                                                                html.A(
+                                                                                    "Dashboard",
+                                                                                    className="bg-secondary text-primary rounded-md px-3 py-2 text-sm font-medium",
+                                                                                ),
+                                                                                href="/dashboard",
+                                                                            ),
                                                                         ],
-                                                                        id="home-link-container",
                                                                         className="ml-10 flex items-baseline space-x-4",
-                                                                    )
+                                                                    ),
                                                                 ],
                                                                 className="hidden md:block",
                                                             ),
@@ -65,7 +77,7 @@ def Layout(children=None):
                             ),
                             html.Div(
                                 [
-                                    html.Div(
+                                    html.Nav(
                                         [
                                             dcc.Link(
                                                 html.A(
@@ -74,14 +86,28 @@ def Layout(children=None):
                                                 ),
                                                 href="/",
                                             ),
+                                            dcc.Link(
+                                                html.A(
+                                                    "Analytics",
+                                                    className="bg-secondary text-primary rounded-md px-3 py-2 text-sm font-medium",
+                                                ),
+                                                href="/analytics",
+                                            ),
+                                            dcc.Link(
+                                                html.A(
+                                                    "Dashboard",
+                                                    className="bg-secondary text-primary rounded-md px-3 py-2 text-sm font-medium",
+                                                ),
+                                                href="/dashboard",
+                                            ),
                                         ],
-                                        className="space-y-1 px-2 py-3 sm:px-3 md:hidden",
-                                    ),  # border-b border-primary
+                                        className="space-y-1 space-x-4 px-2 py-3 sm:px-3 md:hidden",
+                                    ),
                                 ],
                                 className="bg-primary",
                             ),
                         ],
-                        className="bg-primary",
+                        className="bg-primary",  # border-b border-primary
                     ),
                     html.Header(
                         [
