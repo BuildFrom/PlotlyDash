@@ -1,16 +1,47 @@
 import dash
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
+from fastapi.responses import JSONResponse
 from fastapi.middleware.wsgi import WSGIMiddleware
 from app.lib import Layout, Footer
+from dotenv import load_dotenv
+from fastapi.middleware.cors import CORSMiddleware
 
+
+load_dotenv()
 # ==============================
+
 
 def create_app():
     app = FastAPI()
+
+    app.add_middleware(
+        CORSMiddleware,
+        allow_origins=["*"],
+        allow_credentials=True,
+        allow_methods=["*"],
+        allow_headers=["*"],
+    )
+
+    @app.exception_handler(HTTPException)
+    async def http_exception_handler(request, exc):
+        return JSONResponse(
+            status_code=exc.status_code,
+            content={"message": exc.detail},
+        )
+
+    @app.exception_handler(404)
+    async def not_found_handler(request, exc):
+        return JSONResponse(
+            status_code=404,
+            content={"message": "Not Found"},
+        )
+
     app.mount("/", WSGIMiddleware(create_dash().server))
     return app
 
+
 # ==============================
+
 
 def create_dash() -> dash.Dash:
     app = dash.Dash(
