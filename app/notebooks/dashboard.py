@@ -36,7 +36,7 @@ def provider():
                     ),
                     Footer(
                         brand="Brand",
-                        docs="https://dash.plotly.com/dash-html-components",
+                        docs_url="https://dash.plotly.com/dash-html-components",
                     ),
                 ]
             )

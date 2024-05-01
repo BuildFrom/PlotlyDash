@@ -1,7 +1,7 @@
 from dash import html, dcc
 
 
-def Footer(brand, docs):
+def Footer(brand, docs_url):
     return html.Div(
         [
             html.Div(
@@ -14,7 +14,7 @@ def Footer(brand, docs):
                 [
                     html.Div("Documentation", className="text-primary"),
                 ],
-                href=docs,
+                href=docs_url,
                 refresh=True,
                 className="px-3 flex space-x-1.5 items-center",
             ),
