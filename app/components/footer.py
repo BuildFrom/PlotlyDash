@@ -1,21 +1,23 @@
 from dash import html, dcc
 
-def Footer():
+
+def Footer(brand, docs):
     return html.Div(
         [
             html.Div(
                 [
-                    html.Div("Data Collab", className="text-primary"),
+                    html.Div(brand, className="text-primary"),
                 ],
                 className="px-3 flex space-x-1.5 items-center",
             ),
             dcc.Link(
                 [
-                    html.Div("Source Code", className="text-primary"),
+                    html.Div("Documentation", className="text-primary"),
                 ],
-                href="https://github.com/BuildFrom/PlotlyDash",
+                href=docs,
                 refresh=True,
                 className="px-3 flex space-x-1.5 items-center",
             ),
         ],
-        className="pt-40 flex items-center justify-between text-sm")
+        className="pt-40 flex items-center justify-between text-sm",
+    )

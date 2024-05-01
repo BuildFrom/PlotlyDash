@@ -6,12 +6,7 @@ import { fontFamily } from 'tailwindcss/defaultTheme';
 module.exports = {
   darkMode: ['class'],
 	content: [
-    "./assets/**/*.{py,html,js}",
-    "./components/**/*.{py,html,js}",
-    "./data/**/*.{py,html,js}",
-    "./pages/**/*.{py,html,js}",
-    "./utils/**/*.{py,html,js}",
-	"./app/**/*.py",
+	"./app/**/*.{py, svg}",
   ],
 	safelist: ['dark'],
 	theme: {

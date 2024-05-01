@@ -1,50 +1,61 @@
-import os
 import flask
 import dash
-import numpy as np
-import pandas as pd
-import plotly.express as px
-from dash import dcc, html, Input, Output
+from dash import html
 from app.components import Layout, Card, Footer
+from .figures import tweak_alta as snowFigure
+
 
 def plotly() -> dash.Dash:
-    
+    app = create_dash()
+    app.layout = provider()
+    return app
+
+
+def provider():
+    return html.Div(
+        [
+            Layout(
+                [
+                    Card(
+                        title="First Title",
+                        description="First Description",
+                        content=html.P("First content component"),
+                        width="w-full lg:w-3/4",
+                    ),
+                    Card(
+                        title="Second Title",
+                        description="Second Description",
+                        content=html.P("Second paragraph component"),
+                        width="w-full lg:w-1/4",
+                    ),
+                    Card(
+                        title="2011 Season Snow Depth",
+                        description="Third Description",
+                        content=snowFigure(),
+                        width="w-full",
+                    ),
+                    Footer(
+                        brand="Brand",
+                        docs="https://dash.plotly.com/dash-html-components",
+                    ),
+                ]
+            )
+        ]
+    )
+
+
+def create_dash():
     app = dash.Dash(
-        __name__, 
+        __name__,
         title="Dash App",
-        server=flask.Flask(__name__), 
+        server=flask.Flask(__name__),
         # make sure to change `assets_folder` if needed.
         # because my file is within notebooks folder, I had to change path to `../assets`
-        external_stylesheets = [{
-            'href': 'assets/css/output.css',
-            'rel': 'stylesheet',
-        }]
+        external_stylesheets=[
+            {
+                "href": "assets/css/output.css",
+                "rel": "stylesheet",
+            }
+        ],
     )
-
-    firstNewComponent = html.P(
-        "First paragraph component",
-    )
-
-    secondNewComponent = html.P(
-        "Second paragraph component",
-    )
-
-    app.layout = html.Div([
-        Layout([
-            Card(
-                title="First Title",
-                description="First Description",
-                paragraph=firstNewComponent,
-                width="w-full lg:w-3/4"
-            ),
-            Card(
-                title="Second Title",
-                description="Second Description",
-                paragraph=secondNewComponent,
-                width="w-full lg:w-1/4"
-            ),
-            Footer()
-        ])
-    ])
-
     return app

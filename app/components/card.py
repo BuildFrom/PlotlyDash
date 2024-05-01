@@ -1,6 +1,7 @@
 from dash import html
 
-def Card(title, description, paragraph, width="w-full"):
+
+def Card(title, description, content, width="w-full"):
     return html.Div(
         [
             html.Div(
@@ -18,7 +19,7 @@ def Card(title, description, paragraph, width="w-full"):
                             html.Div(
                                 [
                                     html.P(
-                                        paragraph,
+                                        content,
                                         className="text-secondary-foreground mt-5",
                                     ),
                                 ],
