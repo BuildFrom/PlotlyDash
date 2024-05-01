@@ -49,8 +49,7 @@ def create_dash():
         __name__,
         title="Dash App",
         server=flask.Flask(__name__),
-        # make sure to change `assets_folder` if needed.
-        # because my file is within notebooks folder, I had to change path to `../assets`
+        assets_folder="../assets",
         external_stylesheets=[
             {
                 "href": "assets/css/output.css",

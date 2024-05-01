@@ -47,7 +47,7 @@ def Layout(children=None):
                                                         ],
                                                         className="flex items-center",
                                                     ),
-                                                    # TODO: Attemplted to create Menu button 💀
+                                                    # TODO: Attempted to create Menu button 💀
                                                     # html.Button([
                                                     #     html.Img(
                                                     #         src="assets/icons/menu.svg",
