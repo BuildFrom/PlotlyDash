@@ -7,7 +7,6 @@ from app.lib import Layout, Footer
 from dotenv import load_dotenv
 from fastapi.middleware.cors import CORSMiddleware
 
-
 load_dotenv()
 
 # ==============================
@@ -41,7 +40,7 @@ def create_app():
         )
 
     app.mount("/", WSGIMiddleware(create_dash().server))
-    
+
     return app
 
 

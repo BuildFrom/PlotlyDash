@@ -1,7 +1,8 @@
 from dash import html
+from .badge import Badge
 
 
-def Card(title, description, content, width="w-full"):
+def Card(title, description, content, badge="", width="w-full"):
     return html.Div(
         [
             html.Div(
@@ -12,6 +13,7 @@ def Card(title, description, content, width="w-full"):
                                 title,
                                 className="text-4xl font-bold tracking-tight text-primary sm:text-5xl",
                             ),
+                            Badge(tags=badge),
                             html.H2(
                                 description,
                                 className="mt-6 text-base text-muted-foreground",
@@ -32,5 +34,5 @@ def Card(title, description, content, width="w-full"):
                 className="bg-card rounded-xl p-2",
             ),
         ],
-        className=f"p-2 inline-block {width}",
+        className=f"p-2 inline-block {width} ",
     )

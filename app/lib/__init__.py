@@ -4,6 +4,8 @@
 from .components.layout import Layout as Layout
 from .components.card import Card as Card
 from .components.footer import Footer as Footer
+from .components.badge import Badge as Badge
+from .components.button import Button as Button
 
 # ===================
 # Jupyter Helpers, Figures and Constants
