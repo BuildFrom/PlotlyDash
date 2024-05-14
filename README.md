@@ -22,6 +22,10 @@ I've added it via npm because most people recommended cli over cdn and that v4 i
 
 Why did I do it? Apparently `https://plotly.com/dash/design-kit/` is going to cost you over 50 grands per year, yes, that's right! so here take it for free.
 
+## Debug
+
+Hold Shift + Tab to see docstrings
+
 ---
 
 PRs from Data Scientists and Frontend Developers are welcomed for better UI and cleaner Jupyter Lab/Notebooks experience 
