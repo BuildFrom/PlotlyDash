@@ -8,3 +8,5 @@ python-dotenv
 colorama
 passlib
 jose
+jupyter_ai
+langchain
